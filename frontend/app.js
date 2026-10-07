@@ -74,8 +74,6 @@ function renderReport(report) {
   const scoreText = score == null ? 'Unavailable' :
     `${score < .01 ? (score * 100).toFixed(2) : Math.round(score * 100)}%`;
   setText('#ai-probability', scoreText);
-  setText('#confidence', calibrated && classification.confidence != null ? `${Math.round(classification.confidence * 100)}%` : (report.model?.available ? 'Uncalibrated' : 'Unavailable'));
-  setText('#model-state', report.model?.available ? `${report.model.name} · ${report.model.version}${report.model.calibrated ? ' · calibrated' : ' · uncalibrated'}` : 'No trained model installed');
   document.querySelector('#meter-fill').style.width = score == null ? '0%' : `${Math.max(0, Math.min(100, score * 100))}%`;
   document.querySelector('#meter-fill').style.background = score > .7 ? 'var(--amber)' : 'var(--mint)';
   setText('#filename-label', report.filename);

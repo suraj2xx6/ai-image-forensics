@@ -89,7 +89,7 @@ def index() -> FileResponse:
 @app.get("/assets/{asset_path:path}", include_in_schema=False)
 def assets(asset_path: str) -> FileResponse:
     """Serve only known static frontend assets."""
-    allowed = {"app.css", "app.js"}
+    allowed = {"app.css", "app.js", "qr-code.png"}
     if asset_path not in allowed:
         return FileResponse(FRONTEND / "index.html", status_code=404)
     return FileResponse(FRONTEND / asset_path)
