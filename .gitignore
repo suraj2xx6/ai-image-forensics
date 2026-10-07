@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Models and data can have large, private, or licensed artifacts
+models/*
+!models/README.md
+datasets/**
+!datasets/README.md
+reports/*
+!reports/README.md
+*.joblib
+*.pkl
+
+# Local runtime data
+*.sqlite3
+*.db
+uploads/
+tmp/
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db
